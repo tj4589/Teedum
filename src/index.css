@@ -1,0 +1,62 @@
+:root {
+  --color-primary: #6A0DAD;
+  --color-primary-light: #9d46ff;
+  --color-secondary: #E6E6FA;
+  --color-accent: #FFD700;
+  --color-bg-start: #1a0b2e;
+  --color-bg-end: #4a148c;
+  --color-text: #ffffff;
+  --color-text-muted: #d1c4e9;
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --border-radius: 12px;
+  --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-glow: 0 0 15px rgba(157, 70, 255, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background: linear-gradient(135deg, var(--color-bg-start) 0%, var(--color-bg-end) 100%);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-container {
+  animation: fadeIn 0.5s ease-out;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
