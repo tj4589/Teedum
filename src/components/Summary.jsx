@@ -13,7 +13,7 @@ const Summary = ({ selections, onReset }) => {
         <div className="step-container">
             <BackgroundDecoration />
             <h1 className="animate-fade-in-up" style={{ fontSize: '3rem', marginBottom: '2rem', textShadow: '0 0 20px rgba(255, 215, 0, 0.5)' }}>
-                It's a Date! 🥂
+                It's a Date! ma princesse🥂
             </h1>
 
             <div className="glass-card animate-fade-in-up" style={{ maxWidth: '600px', margin: '0 auto', padding: '4rem' }}>
@@ -32,7 +32,7 @@ const Summary = ({ selections, onReset }) => {
             </div>
 
             <p className="animate-fade-in-up" style={{ marginTop: '3rem', fontSize: '1.4rem', fontStyle: 'italic' }}>
-                I can't wait to see you! ❤️
+                I love you alot more my dum. I can't wait to see you! ❤️🤞🏽
             </p>
 
             <button

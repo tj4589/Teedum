@@ -15,7 +15,7 @@ const TimeSelection = ({ day, onSelect, onBack }) => {
         <div className="step-container">
             <BackgroundDecoration />
             <h2 className="animate-fade-in-up" style={{ fontSize: '2.5rem', marginBottom: '1rem', textShadow: '0 2px 10px rgba(0,0,0,0.2)' }}>
-                What time on {day}? ⏰
+                What time on {day}? my babygirl⏰
             </h2>
 
             <div className="animate-fade-in-up" style={{
