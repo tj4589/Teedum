@@ -54,13 +54,19 @@ function App() {
             className={`pill-btn ${view === 'planner' ? 'active' : ''}`}
             onClick={() => setView('planner')}
           >
-            Date Planner
+            The day I asked you to be my girlfriend
           </button>
           <button 
             className={`pill-btn ${view === 'dum' ? 'active' : ''}`}
             onClick={() => setView('dum')}
           >
-            Dum Website
+            Our first virtual date
+          </button>
+          <button 
+            className={`pill-btn ${view === 'apology' ? 'active' : ''}`}
+            onClick={() => setView('apology')}
+          >
+            Apology Letter
           </button>
         </div>
       </div>
@@ -75,8 +81,10 @@ function App() {
             {step === 'time' && <TimeSelection day={selections.day} onSelect={handleTimeSelect} onBack={handleBack} />}
             {step === 'summary' && <Summary selections={selections} onReset={handleReset} />}
           </div>
-        ) : (
+        ) : view === 'dum' ? (
           <DumWebsite />
+        ) : (
+          <ApologyLetter />
         )}
       </div>
     </div>

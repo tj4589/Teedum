@@ -192,14 +192,16 @@ p {
 /* Navigation Pill Styles */
 .nav-pill-container {
   position: fixed;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
   z-index: 1000;
   display: flex;
   justify-content: center;
-  width: 100%;
   pointer-events: none;
+  background: linear-gradient(to bottom, var(--color-bg-start) 0%, rgba(46, 2, 73, 0.8) 50%, transparent 100%);
+  backdrop-filter: blur(8px);
 }
 
 .nav-pill {
@@ -208,11 +210,18 @@ p {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50px;
-  padding: 6px;
+  padding: 4px;
   display: flex;
-  gap: 4px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  gap: 2px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   pointer-events: auto;
+  max-width: 95vw;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.nav-pill::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
 }
 
 .pill-btn {
@@ -220,12 +229,13 @@ p {
   border: none;
   border-radius: 50px;
   color: white;
-  padding: 0.8rem 1.8rem;
-  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0.7;
+  opacity: 0.6;
+  white-space: nowrap;
 }
 
 .pill-btn:hover {
@@ -252,7 +262,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 6rem; /* Space for the pill */
+  padding-top: 7rem; /* Increased space for the pill area */
 }
 
 .app-container {
