@@ -135,12 +135,12 @@ export default function ApologyLetter() {
       </div>
 
       <div className="apology-card">
-        <h2 className="apology-header">For My Dum Dum 💖</h2>
+        <h2 className="apology-header">For My Dum💖</h2>
         <div className="apology-body">
           {content}
         </div>
         <div className="apology-footer">
-          Forever Yours, T
+          Forever baby, T
         </div>
       </div>
     </div>
