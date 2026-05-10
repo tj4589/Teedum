@@ -244,7 +244,7 @@ p {
 
 .pill-btn.active {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 105, 180, 0.3);
 }
 
 /* Dynamic Indicator for Active Tab */
@@ -255,11 +255,12 @@ p {
   bottom: 6px;
   left: var(--active-left, 6px);
   width: var(--active-width, 0);
-  background: rgba(255, 255, 255, 0.1);
+  background: #ff69b4;
   border-radius: 30px;
   transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   z-index: 0;
   pointer-events: none;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
 }
 
 .app-root {
