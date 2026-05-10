@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 import LandingPage from './components/LandingPage';
 import AreYouReady from './components/AreYouReady';
@@ -7,15 +7,33 @@ import DaySelection from './components/DaySelection';
 import TimeSelection from './components/TimeSelection';
 import Summary from './components/Summary';
 import DumWebsite from './components/DumWebsite';
+import ApologyLetter from './components/ApologyLetter';
 
 function App() {
-  const [view, setView] = useState('planner'); // 'planner' or 'dum'
+  const [view, setView] = useState('planner'); // 'planner', 'dum', or 'apology'
   const [step, setStep] = useState('landing');
   const [selections, setSelections] = useState({
     week: null,
     day: null,
     time: null
   });
+
+  const navRefs = {
+    planner: useRef(null),
+    dum: useRef(null),
+    apology: useRef(null)
+  };
+
+  const pillRef = useRef(null);
+
+  useEffect(() => {
+    const activeBtn = navRefs[view].current;
+    if (activeBtn && pillRef.current) {
+      const { offsetLeft, offsetWidth } = activeBtn;
+      pillRef.current.style.setProperty('--active-left', `${offsetLeft}px`);
+      pillRef.current.style.setProperty('--active-width', `${offsetWidth}px`);
+    }
+  }, [view]);
 
   const handleStart = () => setStep('are-you-ready');
   const handleReady = () => setStep('week');
@@ -47,22 +65,25 @@ function App() {
 
   return (
     <div className="app-root">
-      {/* Navigation Pill */}
+      {/* Dynamic Island Navigation */}
       <div className="nav-pill-container">
-        <div className="nav-pill">
+        <div className="nav-pill" ref={pillRef}>
           <button 
+            ref={navRefs.planner}
             className={`pill-btn ${view === 'planner' ? 'active' : ''}`}
             onClick={() => setView('planner')}
           >
             The day I asked you to be my girlfriend
           </button>
           <button 
+            ref={navRefs.dum}
             className={`pill-btn ${view === 'dum' ? 'active' : ''}`}
             onClick={() => setView('dum')}
           >
             Our first virtual date
           </button>
           <button 
+            ref={navRefs.apology}
             className={`pill-btn ${view === 'apology' ? 'active' : ''}`}
             onClick={() => setView('apology')}
           >
